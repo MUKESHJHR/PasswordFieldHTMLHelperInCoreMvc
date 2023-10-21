@@ -1,0 +1,25 @@
+﻿@model PasswordFieldHTMLHelperInCoreMvc.Models.LoginModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Employee Login</h2>
+@using (Html.BeginForm())
+{
+
+    @Html.HiddenFor(l => l.LoginId)
+
+    @Html.Label("LoginName","User Name")
+    @Html.TextBoxFor(l => l.LoginName,new {@class="form-control", placeholder="Enter User Name"})
+    <br />
+    @Html.Label("LoginPassword","Password")
+    @Html.Password("LoginPassword",null,new {@class="form-control", placeholder="Enter Password"})
+    @*@Html.PasswordFor(l => l.LoginPassword,new {@class="form-control", placeholder="Enter Password"})*@
+    <br />
+    @Html.Label("LoginPassword","Confirm Password")
+    @Html.PasswordFor(l => l.LoginPassword,new {@class="form-control", placeholder="Enter Confirm Password"})
+    <br />
+    <input id="submit" type="submit" value="Login" />
+
+}
